@@ -1,0 +1,226 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+}
+
+.map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.layer {
+    align-items: center;
+    display: flex;
+    margin: 1rem;
+    font-size: small;
+}
+
+.layer:hover img {
+    border: 3px solid #000000; /* Change the border color as needed */
+}
+
+.mapboxgl-popup {
+    max-width: 400px;
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    overflow: auto;
+    }
+
+#info-window {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    z-index: 1;
+}
+
+#left_sidebar {
+    background-color: white;
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+    overflow: auto;
+    margin: 10px;
+    height: calc(100% - 20px); /* Subtract the margin from the height */
+
+}
+
+#right_sidebar {
+    background-color: white;
+    width: 600px;
+    height: 100%;
+    position: absolute;
+    /* right: 0; /* Align the sidebar to the right */
+    /* left: 300px; */
+    left: 0px;
+
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+    overflow: auto;
+    /* padding-top: 20px; */
+    margin: 10px;
+    padding: 20px;
+    height: calc(100% - 60px); /* Subtract the margin from the height */
+
+}
+
+
+/* WebKit browsers (Chrome, Safari) */
+#left_sidebar::-webkit-scrollbar {
+    width: 80px; /* Set the width of the scrollbar */
+}
+
+/* WebKit browsers (Chrome, Safari) */
+/* #right_sidebar::-webkit-scrollbar {
+    width: 80px; /* Set the width of the scrollbar
+/*} */
+
+input[type="file"] {
+    display: none;
+}
+
+#file-content {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    display: inline-block;
+    height: 80%;
+    background-color: #11112b;
+    width: 300px;
+    margin-left: 25px;
+    border-radius: 5px;
+    color: white;
+    box-shadow: inset 0 0 10px #000000;
+    overflow: auto;
+    padding: 25px;
+    text-align: left;
+}
+
+#upload-btn-label {
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    border: 0;
+    font-size: x-small !important;
+    /* min-height: 20px; */
+    padding: 7px;
+    min-width: 100px;
+    color: #ffffff;
+    background: #008060;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+    margin: 1rem;
+    /* margin-top: 20px;
+    margin-bottom: 20px; */
+    text-align: center;
+}
+
+#upload-btn-label:hover {
+    background: #006e52;
+}
+
+
+.feature-item {
+    margin-left: 1rem;
+}
+
+
+.chart {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(152, 152, 152, 0.05);
+    border-radius: 0.375rem;
+    margin: auto;
+    display: inline-block;
+    /* max-width: 95%; */
+    margin: 10px 20px;
+}
+
+/* 
+.filter-container {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+
+
+.filter-multiselect {
+    width: 200px; /* Set the width as per your requirement --------
+    ----
+} */
+
+
+.filter-container {
+    display: flex;
+    flex-direction: row;
+    opacity: 0.8;
+    /* margin: 10px; */
+}
+
+.filter-group {
+    /* font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif; */
+    font-size: 10px;
+    font-weight: 400;
+    display: block;
+    /* position: absolute; */
+    margin-left: 20px;
+    padding: 10px;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    border-radius: 3px;
+    /* width: 120px; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(152, 152, 152, 0.05);
+
+    /* color: #fff; */
+}
+
+.filter-title {
+    padding: 10px 0px;
+}
+    
+.filter-group input[type='checkbox']:first-child + label {
+border-radius: 3px 3px 0 0;
+}
+    
+.filter-group label:last-child {
+border-radius: 0 0 3px 3px;
+border: none;
+}
+    
+.filter-group input[type='checkbox'] {
+display: none;
+}
+    
+.filter-group input[type='checkbox'] + label {
+/* background-color: #3386c0; */
+display: block;
+cursor: pointer;
+padding: 3px;
+/* border-bottom: 1px solid rgba(0, 0, 0, 0.25); */
+}
+    
+.filter-group input[type='checkbox'] + label {
+background-color: #e5e5e5;
+text-transform: capitalize;
+}
+    
+.filter-group input[type='checkbox'] + label:hover,
+.filter-group input[type='checkbox']:checked + label {
+background-color: #ffffff;
+}
+    
+.filter-group input[type='checkbox']:checked + label:before {
+content: '✔';
+margin-right: 5px;
+}
