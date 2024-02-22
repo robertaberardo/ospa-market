@@ -15,9 +15,7 @@ function loadMap() {
     showInfo: true,
   };
 
-  mapboxgl.accessToken =
-    "pk.eyJ1Ijoib3NwYS1wbGFjZSIsImEiOiJjbHN4cTdhNDUwNWswMnJxcHY3MDJtYzV2In0.pk.eyJ1Ijoib3NwYS1wbGFjZSIsImEiOiJjbHN4cTdhNDUwNWswMnJxcHY3MDJtYzV2In0.8q7gysaIMqHDJHZtTGfUDw";
-
+  mapboxgl.accessToken = 'pk.eyJ1Ijoib3NwYS1wbGFjZSIsImEiOiJjbHN4cTdhNDUwNWswMnJxcHY3MDJtYzV2In0.8q7gysaIMqHDJHZtTGfUDw';
 
   map = new mapboxgl.Map({
     container: "map",
